@@ -15,7 +15,8 @@
             // Get the background-color property value
             var backgroundColor = style.backgroundColor;
             // Log or use the background color value as needed
-            document.write("Background color:", backgroundColor);
+          var result=  backgroundColor;
+            document.getElementById("bgcolor"). style.background-color = result;
         }
 
         function sendBackgroundColor() {
@@ -24,7 +25,7 @@
         }
     </script>
 </head>
-<body>
+<body id="bgcolor">
     
     <button onclick="sendBackgroundColor()">Get Background Color</button>
 </body>
