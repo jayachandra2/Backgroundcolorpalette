@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <script>
+        function changeBackgroundColor(elementId, color) {
+            var element = document.getElementById(elementId);
+            if (element) {
+                element.style.backgroundColor = color;
+            } else {
+                console.error("Element with ID '" + elementId + "' not found.");
+            }
+        }
 
+        function changeBodyBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body style=" background-color:red;">
+    <div id="myDiv" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button onclick="changeBackgroundColor('myDiv', 'yellow')">Change Div Background Color</button>
+    <button onclick="changeBodyBackgroundColor('lightgreen')">Change Body Background Color</button>
+</body>
+</html>
