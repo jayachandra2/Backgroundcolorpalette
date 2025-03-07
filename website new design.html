@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Background Color Example</title>
     <style>
-        body{
-            background-color:#e7717d;
-        }
-        .container{
-            display:flex;
-            justify-content: end;
-            gap:10px;
-        }
-        .home_link{
-            background-color: transparent;
-            width:fit-content;
-            height:20px;
-        }
-        a{
-            color:black;
-            text-decoration: none;
-            background-color:transparent;
-            font-variant:small-caps;
-            font-weight: bold;
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
         }
     </style>
+    <script>
+        function getBackgroundColor(element) {
+            // Get the computed style of the element
+            var style = window.getComputedStyle(element);
+            // Get the background-color property value
+            var backgroundColor = style.backgroundColor;
+            // Log or use the background color value as needed
+            console.log("Background color:", backgroundColor);
+        }
+
+        function sendBackgroundColor() {
+            var element = document.getElementById("colorBox");
+            getBackgroundColor(element);
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="home_link"><a href="#">home</a></div>
-        <div class="about_link"><a href="#">About</a></div>
-        <div class="contact_link"><a href="#">Contact</a></div>
-        <div class="program_link"><a href="#">Programs</a></div>
-    </div>
+    <div id="colorBox"></div>
+    <button onclick="sendBackgroundColor()">Get Background Color</button>
 </body>
 </html>
